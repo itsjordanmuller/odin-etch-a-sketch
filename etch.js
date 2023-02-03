@@ -21,7 +21,7 @@ function createGrid() {
     for (let c = 0; c < columns; c++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
-      cell.style.backgroundColor = colorPicker.value;
+      cell.style.backgroundColor = 'white';
       cell.addEventListener("click", handleCellClick);
       cell.addEventListener("mouseover", handleCellHover);
 
@@ -29,5 +29,17 @@ function createGrid() {
     }
 
     gridContainer.appendChild(row);
+  }
+}
+
+function handleCellClick() {
+  this.classList.toggle("filled");
+  this.style.backgroundColor = colorPicker.value;
+}
+
+function handleCellHover(e) {
+  if (e.buttons == 1) {
+    this.classList.toggle("filled");
+    this.style.backgroundColor = colorPicker.value;
   }
 }
