@@ -13,4 +13,9 @@ function createGrid() {
   const columns = columnsInput.value;
 
   gridContainer.innerHTML = "";
+
+  for (let r = 0; r < rows; r++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+  }
 }
